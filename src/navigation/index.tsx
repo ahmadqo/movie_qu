@@ -1,25 +1,16 @@
 import React from 'react';
-import {
-  NavigationContainer,
-  createStaticNavigation,
-} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
-import {Text, View} from 'react-native';
-const Stack = createNativeStackNavigator();
-const RootStack = createNativeStackNavigator({
-  screens: {
-    Home: HomeScreen,
-  },
-});
+const Stack = createStackNavigator();
 
-const Navigation = createStaticNavigation(RootStack);
-const AppNavigator = () => <Navigation />;
-
-const Helo = () => (
-  <View>
-    <Text>Hello</Text>
-  </View>
+const AppNavigator = () => (
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} />
+    </Stack.Navigator>
+  </NavigationContainer>
 );
 
 export default AppNavigator;

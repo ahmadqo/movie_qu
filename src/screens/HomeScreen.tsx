@@ -24,8 +24,7 @@ const HomeScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text>HALOOO</Text>
-      {/* <MovieList movies={movies} /> */}
+      <MovieList movies={movies} />
     </View>
   );
 };
